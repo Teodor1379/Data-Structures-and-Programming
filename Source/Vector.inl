@@ -1,5 +1,5 @@
-#ifndef VECTOR_INL_INCLUDED
-#define VECTOR_INL_INCLUDED
+#ifndef _VECTOR_INL_INCLUDED_
+#define _VECTOR_INL_INCLUDED_
 
 template<typename T>
 inline Vector<T>::Vector() {

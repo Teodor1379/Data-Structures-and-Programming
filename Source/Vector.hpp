@@ -1,5 +1,5 @@
-#ifndef VECTOR_HPP_INCLUDED
-#define VECTOR_HPP_INCLUDED
+#ifndef _VECTOR_HPP_INCLUDED_
+#define _VECTOR_HPP_INCLUDED_
 
 #include <cstddef>
 #include <cstdlib>
@@ -12,11 +12,14 @@ class Vector {
 public:
     Vector();
     Vector(const std::size_t&);
+    Vector(const std::size_t&, const std::size_t&);
     Vector(const Vector<T>&);
+    Vector(Vector<T>&&);
 
     ~Vector();
 
     Vector<T>& operator=(const Vector<T>&);
+    Vector<T>& operator=(Vector<T>&&);
 
     Vector<T>& operator+=(const Vector<T>&);
     Vector<T>& operator-=(const Vector<T>&);
@@ -29,6 +32,18 @@ public:
     Vector<T> operator*(const Vector<T>&)   const;
     Vector<T> operator/(const Vector<T>&)   const;
     Vector<T> operator%(const Vector<T>&)   const;
+
+    inline          T& operator[](const std::size_t& index)         noexcept    { return this->data[index]; }
+    inline const    T& operator[](const std::size_t& index) const   noexcept    { return this->data[index]; }
+
+    inline std::size_t getSize()        const noexcept  { return this->size;        }
+    inline std::size_t getCapacity()    const noexcept  { return this->capacity;    }
+
+    inline          T& front()          noexcept    { return this->data[0];                 }
+    inline const    T& front()  const   noexcept    { return this->data[0];                 }
+
+    inline          T& back()           noexcept    { return this->data[this->size - 1];    }
+    inline const    T& back()   const   noexcept    { return this->data[this->size - 1];    }
 
     void pushBack(const T&);
     void popBack();
@@ -45,6 +60,13 @@ private:
     void allocate(const Vector<T>&);
     void deallocate();
 };
+
+template<typename T> bool operator==(const Vector<T>&, const Vector<T>&);
+template<typename T> bool operator!=(const Vector<T>&, const Vector<T>&);
+template<typename T> bool operator<=(const Vector<T>&, const Vector<T>&);
+template<typename T> bool operator>=(const Vector<T>&, const Vector<T>&);
+template<typename T> bool operator< (const Vector<T>&, const Vector<T>&);
+template<typename T> bool operator> (const Vector<T>&, const Vector<T>&);
 
 #include "Vector.inl"
 
