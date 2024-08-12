@@ -50,15 +50,22 @@ public:
 
     void sort();
 
+public:
+    class VectorIterator;
+
 private:
     T*          data;
 
     std::size_t size;
     std::size_t capacity;
 
+    static const std::size_t    REALLOC_STEP = 2;
+
 private:
     void allocate(const Vector<T>&);
     void deallocate();
+
+    void reserve(const std::size_t&);
 };
 
 template<typename T> bool operator==(const Vector<T>&, const Vector<T>&);
@@ -67,6 +74,19 @@ template<typename T> bool operator<=(const Vector<T>&, const Vector<T>&);
 template<typename T> bool operator>=(const Vector<T>&, const Vector<T>&);
 template<typename T> bool operator< (const Vector<T>&, const Vector<T>&);
 template<typename T> bool operator> (const Vector<T>&, const Vector<T>&);
+
+template<typename T>
+class Vector<T>::VectorIterator {
+public:
+
+    inline VectorIterator&  operator++();
+    inline VectorIterator&  operator--();
+
+private:
+    friend class Vector<T>;
+
+    const Vector<T>*    owner; 
+};
 
 #include "Vector.inl"
 
