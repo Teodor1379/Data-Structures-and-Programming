@@ -19,11 +19,17 @@ private:
 public:
     BinarySearchTree();
     BinarySearchTree(const BinarySearchTree<T>&);
+    BinarySearchTree(BinarySearchTree<T>&&);
 
     ~BinarySearchTree();
+
+    BinarySearchTree<T>& operator=(const BinarySearchTree<T>&);
+    BinarySearchTree<T>& operator=(BinarySearchTree<T>&&);
 
 private:
     Node*   root;
 };
+
+#include "BinarySearchTree.inl"
 
 #endif
