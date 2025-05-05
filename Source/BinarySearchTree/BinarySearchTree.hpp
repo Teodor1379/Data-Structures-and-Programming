@@ -15,9 +15,9 @@ template<typename T>
 class BinarySearchTree {
 private:
     struct Node {
-        T       data;
-        Node*   left;
-        Node*   right;
+        T       data    ;
+        Node*   left    ;
+        Node*   right   ;
     };
 
 
