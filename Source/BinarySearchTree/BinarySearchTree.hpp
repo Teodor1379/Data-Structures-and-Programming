@@ -32,8 +32,8 @@ public:
 
 
 public:
-    BinarySearchTree<T>& operator=(const BinarySearchTree<T>&);
-    BinarySearchTree<T>& operator=(BinarySearchTree<T>&&);
+    BinarySearchTree<T>& operator=(const BinarySearchTree<T>&   );
+    BinarySearchTree<T>& operator=(BinarySearchTree<T>&&        );
 
 
 
