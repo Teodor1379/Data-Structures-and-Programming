@@ -38,3 +38,9 @@
 11. https://arena.maycamp.com
 12. https://usaco.training
 13. https://acm.timus.ru
+14. https://edabit.com
+
+
+## Полезни Връзки - Състезателно Програмиране:
+
+1. https://www.spoj.com
