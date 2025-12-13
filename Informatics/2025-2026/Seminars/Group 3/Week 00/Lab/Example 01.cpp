@@ -16,12 +16,12 @@ unsigned int recursion4(unsigned int, unsigned int);
 
 
 
-void printTeo(unsigned int);
 void printAly(unsigned int);
+void printTeo(unsigned int);
 
 
 
-int main(void) {
+int main() {
     unsigned int number = readNumber();
 
 
@@ -32,8 +32,8 @@ int main(void) {
     std::cout << "Recursion Result 4 is: " << recursion4(number, 1) << std::endl;
 
 
-    printTeo(number);
     printAly(number);
+    printTeo(number);
 }
 
 
@@ -96,18 +96,6 @@ unsigned int recursion4(unsigned int number, unsigned int result) {
 
 
 
-void printTeo(unsigned int number) {
-    if (number == 0) {
-        std::cout << std::endl;
-
-        return;
-    }
-
-    std::cout << "T";
-
-    printAly(number - 1);
-}
-
 void printAly(unsigned int number) {
     if (number == 0) {
         std::cout << std::endl;
@@ -118,4 +106,16 @@ void printAly(unsigned int number) {
     std::cout << "A";
 
     printTeo(number - 1);
+}
+
+void printTeo(unsigned int number) {
+    if (number == 0) {
+        std::cout << std::endl;
+
+        return;
+    }
+
+    std::cout << "T";
+
+    printAly(number - 1);
 }
