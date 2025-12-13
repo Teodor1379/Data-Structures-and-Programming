@@ -32,16 +32,22 @@ unsigned int    traverseIsland(std::array<std::array<int, MAX_COLS>, MAX_ROWS>&,
 int main(void) {
     unsigned int number = readNumb();
 
+    std::cout << std::endl;
+
 
 
     unsigned int rows = readSize("ROWS");
     unsigned int cols = readSize("COLS");
 
-    std::array<std::array<int, MAX_COLS>, MAX_ROWS> matrix;
+    std::cout << std::endl;
 
+
+    std::array<std::array<int, MAX_COLS>, MAX_ROWS> matrix = { { 0 } };
 
     inputMatrix(matrix, rows, cols);
     printMatrix(matrix, rows, cols);
+
+    std::cout << std::endl;
 
 
 
@@ -103,6 +109,8 @@ unsigned int readSize(const std::string& string) {
 void inputMatrix(std::array<std::array<int, MAX_COLS>, MAX_ROWS>& matrix, unsigned int rows, unsigned int cols) {
     if (rows > MAX_ROWS) { throw std::invalid_argument("Invalid ROWS Argument!");   }
     if (cols > MAX_COLS) { throw std::invalid_argument("Invalid COLS Argument!");   }
+
+    std::cout << "Enter the matrix: " << std::endl;
 
     for (unsigned int i = 0; i < rows; ++i) {
         for (unsigned int j = 0; j < cols; ++j) {
