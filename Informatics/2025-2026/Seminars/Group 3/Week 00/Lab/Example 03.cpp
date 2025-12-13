@@ -150,10 +150,10 @@ void traverseMatrix(std::array<std::array<int, MAX_COLS>, MAX_ROWS>& matrix, uns
 
     matrix[row][col] = 0;
 
-    traverseMatrix(matrix, rows, cols, row - 1, col);
-    traverseMatrix(matrix, rows, cols, row + 1, col);
-    traverseMatrix(matrix, rows, cols, row, col - 1);
-    traverseMatrix(matrix, rows, cols, row, col + 1);
+    traverseMatrix(matrix, rows, cols, row - 1, col - 1);
+    traverseMatrix(matrix, rows, cols, row + 1, col - 1);
+    traverseMatrix(matrix, rows, cols, row - 1, col + 1);
+    traverseMatrix(matrix, rows, cols, row + 1, col - 1);
 }
 
 unsigned int traverseIsland(std::array<std::array<int, MAX_COLS>, MAX_ROWS>& matrix, unsigned int rows, unsigned int cols) {
