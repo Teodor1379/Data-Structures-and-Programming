@@ -1,6 +1,9 @@
 #include <array>
 
 
+#include <climits>
+
+
 #include <limits>
 
 
@@ -9,6 +12,11 @@
 
 #include <exception>
 #include <stdexcept>
+
+
+
+constexpr unsigned int MIN_INT = 0          ;
+constexpr unsigned int MAX_INT = UINT_MAX   ;
 
 
 
@@ -106,6 +114,13 @@ void printArray(const std::array<unsigned int, MAX>& array, unsigned int size) {
 
 
 unsigned int findSum(const std::array<unsigned int, MAX>& array, unsigned int size) {
+    // Time     Complexity: O(N)
+    // Space    Complexity: O(1)
+
+    if (size == 0) {
+        throw std::invalid_argument("Invalid SIZE Argument!");
+    }
+
     unsigned int result = 0;
 
     for (unsigned int i = 0; i < size; ++i) {
@@ -116,8 +131,11 @@ unsigned int findSum(const std::array<unsigned int, MAX>& array, unsigned int si
 }
 
 unsigned int findPrd(const std::array<unsigned int, MAX>& array, unsigned int size) {
+    // Time     Complexity: O(N)
+    // Space    Complexity: O(1)
+
     if (size == 0) {
-        throw std::invalid_argument("Invalid Argument Given!");
+        throw std::invalid_argument("Invalid SIZE Argument!");
     }
 
     unsigned int result = 1;
@@ -130,11 +148,14 @@ unsigned int findPrd(const std::array<unsigned int, MAX>& array, unsigned int si
 }
 
 unsigned int findMin(const std::array<unsigned int, MAX>& array, unsigned int size) {
+    // Time     Complexity: O(N)
+    // Space    Complexity: O(1)
+
     if (size == 0) {
-        throw std::invalid_argument("Invalid Argument Given!");
+        throw std::invalid_argument("Invalid SIZE Argument!");
     }
 
-    unsigned int result = -1;
+    unsigned int result = MAX_INT;
 
     for (unsigned int i = 0; i < size; ++i) {
         result = std::min(result, array[i]);
@@ -144,11 +165,14 @@ unsigned int findMin(const std::array<unsigned int, MAX>& array, unsigned int si
 }
 
 unsigned int findMax(const std::array<unsigned int, MAX>& array, unsigned int size) {
+    // Time     Complexity: O(N)
+    // Space    Complexity: O(1)
+
     if (size == 0) {
-        throw std::invalid_argument("Invalid Argument Given!");
+        throw std::invalid_argument("Invalid SIZE Argument!");
     }
 
-    unsigned int result = +0;
+    unsigned int result = MIN_INT;
 
     for (unsigned int i = 0; i < size; ++i) {
         result = std::max(result, array[i]);
