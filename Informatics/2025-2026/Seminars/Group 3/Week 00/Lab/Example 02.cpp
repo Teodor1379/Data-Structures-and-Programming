@@ -93,7 +93,7 @@ unsigned int readSize(const std::string& string) {
 
         std::cin >> size;
 
-        if (std::cin.fail() || size == 0) {
+        if (std::cin.fail() || size == 0 || size > 1'00) {
             std::cin.clear  ()                                                  ;
             std::cin.ignore (std::numeric_limits<std::streamsize>::max(), '\n') ;
         } else {
