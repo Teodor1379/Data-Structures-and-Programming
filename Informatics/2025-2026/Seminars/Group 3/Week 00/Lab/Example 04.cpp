@@ -73,4 +73,5 @@ void generate(std::array<char, MAX>& array, unsigned int index, unsigned int siz
 
     array[index] = '0'; generate(array, index + 1, size);
     array[index] = '1'; generate(array, index + 1, size);
+    array[index] = '2'; generate(array, index + 1, size);
 }
