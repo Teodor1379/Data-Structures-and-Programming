@@ -5,12 +5,13 @@
 
 #include <limits>
 
+
 #include <iostream>
 
 
 
-const unsigned int MAX_ROWS = 1'00;
-const unsigned int MAX_COLS = 1'00;
+constexpr unsigned int MAX_ROWS = 1'00;
+constexpr unsigned int MAX_COLS = 1'00;
 
 
 
