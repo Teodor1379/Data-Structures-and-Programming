@@ -8,7 +8,7 @@
 
 
 
-constexpr unsigned int MIN_SIZE = 0     ;
+constexpr unsigned int MIN_SIZE =   0   ;
 constexpr unsigned int MAX_SIZE = 100   ;
 
 
@@ -60,7 +60,8 @@ unsigned int readSize() {
 
 
 void generateDigits(std::array<char, MAX_SIZE>& array, unsigned int index, unsigned int size) {
-    if (size == MIN_SIZE || size > MAX_SIZE) { throw std::invalid_argument("Invalid SIZE Argument!");   }
+    if (size == MIN_SIZE)   { throw std::invalid_argument("Invalid SIZE Argument!");    }
+    if (size >  MAX_SIZE)   { throw std::invalid_argument("Invalid SIZE Argument!");    } 
 
     if (index == size) {
         std::cout << "The generation is: ";
