@@ -10,11 +10,11 @@
 
 
 
-constexpr unsigned int MIN_SIZE =   0;
-constexpr unsigned int MAX_SIZE = 100;
+constexpr unsigned int MIN_SIZE =   0   ;
+constexpr unsigned int MAX_SIZE = 100   ;
 
-constexpr unsigned int MAX_ROWS = 100;
-constexpr unsigned int MAX_COLS = 100;
+constexpr unsigned int MAX_ROWS = 100   ;
+constexpr unsigned int MAX_COLS = 100   ;
 
 
 
@@ -111,8 +111,8 @@ unsigned int readSize(const std::string& string) {
 
 
 void inputMatrix(std::array<std::array<int, MAX_COLS>, MAX_ROWS>& matrix, unsigned int rows, unsigned int cols) {
-    if (rows > MAX_ROWS) { throw std::invalid_argument("Invalid ROWS Argument!");   }
-    if (cols > MAX_COLS) { throw std::invalid_argument("Invalid COLS Argument!");   }
+    if (rows == 0 || rows > MAX_ROWS)   { throw std::invalid_argument("Invalid ROWS Argument!");    }
+    if (cols == 0 || cols > MAX_COLS)   { throw std::invalid_argument("Invalid COLS Argument!");    }
 
     std::cout << "Enter the matrix: " << std::endl;
 
@@ -124,8 +124,8 @@ void inputMatrix(std::array<std::array<int, MAX_COLS>, MAX_ROWS>& matrix, unsign
 }
 
 void printMatrix(const std::array<std::array<int, MAX_COLS>, MAX_ROWS>& matrix, unsigned int rows, unsigned int cols) {
-    if (rows > MAX_ROWS) { throw std::invalid_argument("Invalid ROWS Argument!");   }
-    if (cols > MAX_COLS) { throw std::invalid_argument("Invalid COLS Argument!");   }
+    if (rows == 0 || rows > MAX_ROWS)   { throw std::invalid_argument("Invalid ROWS Argument!");    }
+    if (cols == 0 || cols > MAX_COLS)   { throw std::invalid_argument("Invalid COLS Argument!");    }
 
     std::cout << "The matrix is: " << std::endl;
 
@@ -141,8 +141,8 @@ void printMatrix(const std::array<std::array<int, MAX_COLS>, MAX_ROWS>& matrix, 
 
 
 void traverseMatrix(std::array<std::array<int, MAX_COLS>, MAX_ROWS>& matrix, unsigned int rows, unsigned int cols, unsigned int row, unsigned int col) {
-    if (rows > MAX_ROWS) { throw std::invalid_argument("Invalid ROWS Argument!");   }
-    if (cols > MAX_COLS) { throw std::invalid_argument("Invalid COLS Argument!");   }
+    if (rows == 0 || rows > MAX_ROWS)   { throw std::invalid_argument("Invalid ROWS Argument!");    }
+    if (cols == 0 || cols > MAX_COLS)   { throw std::invalid_argument("Invalid COLS Argument!");    }
 
     if (row >= rows || col >= cols) {
         return;
@@ -161,8 +161,8 @@ void traverseMatrix(std::array<std::array<int, MAX_COLS>, MAX_ROWS>& matrix, uns
 }
 
 unsigned int traverseIsland(std::array<std::array<int, MAX_COLS>, MAX_ROWS>& matrix, unsigned int rows, unsigned int cols) {
-    if (rows > MAX_ROWS) { throw std::invalid_argument("Invalid ROWS Argument!");   }
-    if (cols > MAX_COLS) { throw std::invalid_argument("Invalid COLS Argument!");   }
+    if (rows == 0 || rows > MAX_ROWS)   { throw std::invalid_argument("Invalid ROWS Argument!");    }
+    if (cols == 0 || cols > MAX_COLS)   { throw std::invalid_argument("Invalid COLS Argument!");    }
 
     unsigned int result = 0;
 
