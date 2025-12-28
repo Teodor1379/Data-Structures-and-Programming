@@ -10,7 +10,7 @@
 
 
 
-constexpr unsigned int MIN_SIZE = 100;
+constexpr unsigned int MIN_SIZE =   0;
 constexpr unsigned int MAX_SIZE = 100;
 
 constexpr unsigned int MAX_ROWS = 100;
