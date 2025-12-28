@@ -8,27 +8,28 @@
 
 
 
-constexpr unsigned int MAX = 1'00;
+constexpr unsigned int MIN_SIZE = 0     ;
+constexpr unsigned int MAX_SIZE = 100   ;
 
 
 
-unsigned int readNumb();
+unsigned int readSize();
 
 
 
-void generate(std::array<char, MAX>&, unsigned int, unsigned int);
+void generateDigits(std::array<char, MAX_SIZE>&, unsigned int, unsigned int);
 
 
 
 int main() {
-    unsigned int number = readNumb();
+    unsigned int size = readSize();
 
     std::cout << std::endl;
 
 
-    std::array<char, MAX> array = { 0 };
+    std::array<char, MAX_SIZE> array = { 0 };
     
-    generate(array, 0, number);
+    generateDigits(array, 0, size);
 
 
     return 0;
@@ -36,29 +37,31 @@ int main() {
 
 
 
-unsigned int readNumb() {
-    unsigned int number = 0;
+unsigned int readSize() {
+    unsigned int size = 0;
 
     while (true) {
-        std::cout << "Enter the number: ";
+        std::cout << "Enter the size: ";
 
-        std::cin >> number;
+        std::cin >> size;
 
-        if (std::cin.fail() || number == 0 || number > MAX) {
+        if (std::cin.fail() || size == MIN_SIZE || size > MAX_SIZE) {
             std::cin.clear  ()                                                  ;
             std::cin.ignore (std::numeric_limits<std::streamsize>::max(), '\n') ;
         } else {
             std::cin.clear  ()                                                  ;
             std::cin.ignore (std::numeric_limits<std::streamsize>::max(), '\n') ;
 
-            return number;
+            return size;
         }
     }
 }
 
 
 
-void generate(std::array<char, MAX>& array, unsigned int index, unsigned int size) {
+void generateDigits(std::array<char, MAX_SIZE>& array, unsigned int index, unsigned int size) {
+    if (size == MIN_SIZE || size > MAX_SIZE) { throw std::invalid_argument("Invalid SIZE Argument!");   }
+
     if (index == size) {
         std::cout << "The generation is: ";
 
@@ -71,7 +74,7 @@ void generate(std::array<char, MAX>& array, unsigned int index, unsigned int siz
         return;
     }
 
-    array[index] = '0'; generate(array, index + 1, size);
-    array[index] = '1'; generate(array, index + 1, size);
-    array[index] = '2'; generate(array, index + 1, size);
+    array[index] = '0'; generateDigits(array, index + 1, size);
+    array[index] = '1'; generateDigits(array, index + 1, size);
+    array[index] = '2'; generateDigits(array, index + 1, size);
 }
