@@ -10,8 +10,11 @@
 
 
 
-constexpr unsigned int MAX_ROWS = 1'00;
-constexpr unsigned int MAX_COLS = 1'00;
+constexpr unsigned int MIN_SIZE = 100;
+constexpr unsigned int MAX_SIZE = 100;
+
+constexpr unsigned int MAX_ROWS = 100;
+constexpr unsigned int MAX_COLS = 100;
 
 
 
@@ -93,7 +96,7 @@ unsigned int readSize(const std::string& string) {
 
         std::cin >> size;
 
-        if (std::cin.fail() || size == 0 || size > 1'00) {
+        if (std::cin.fail() || size == MIN_SIZE || size > MAX_SIZE) {
             std::cin.clear  ()                                                  ;
             std::cin.ignore (std::numeric_limits<std::streamsize>::max(), '\n') ;
         } else {
