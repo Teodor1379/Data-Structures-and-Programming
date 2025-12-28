@@ -36,6 +36,7 @@ int main() {
     printAly(number);
     printTeo(number);
 
+
     return 0;
 }
 
