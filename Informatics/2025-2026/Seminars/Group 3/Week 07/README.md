@@ -1,3 +1,7 @@
+# Седмица 7
+
+
+
 ### Задача 1 ()
 
 #### Сложност: &nbsp; ![Static Badge](https://img.shields.io/badge/easy-green)
